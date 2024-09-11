@@ -1,0 +1,39 @@
+package project.kasir.warung.beras;
+
+import java.util.Scanner;
+
+public class ProjectKasirWarungBeras {
+    public static void main(String[] args) {
+        System.out.println("==== Warung Beras Kiloan ====");
+        
+        double jumlahBeras,hargaBerasPerKg,totalHargaBeras,diskon,hargaSetelahDiskon;
+        
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Jumlah (kg)    = ");
+        jumlahBeras = input.nextInt();
+        
+        System.out.print("Harga per-kg   = Rp ");
+        hargaBerasPerKg = input.nextInt();
+        
+        totalHargaBeras = jumlahBeras*hargaBerasPerKg;
+        System.out.println("Total Harga    = Rp "+totalHargaBeras);
+        
+        diskon = 0.05*totalHargaBeras;
+        hargaSetelahDiskon = totalHargaBeras - diskon;
+        System.out.println("Diskon 5%      = Rp "+hargaSetelahDiskon);
+        
+        System.out.println("=============================");
+        
+        double uangDiterima,uangKembalian;
+        
+        System.out.print("Uang Diterima  = Rp ");
+        uangDiterima = input.nextInt();
+        
+        uangKembalian = uangDiterima-hargaSetelahDiskon;
+        System.out.println("Uang Kembalian = Rp "+uangKembalian);
+        
+        System.out.println("======== Terimakasih ========");
+                                       
+    }    
+}
