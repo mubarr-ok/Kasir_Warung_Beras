@@ -1,0 +1,114 @@
+package program.percabangan;
+import java.util.Scanner;
+public class TugasSwitchCase {
+    public static void main(String[] args) {
+        System.out.println("========= Daftar Menu =========");
+        System.out.println("1. Sate");
+        System.out.println("   11. Ayam       =  1500/tusuk");
+        System.out.println("   12. Kambing    =  3000/tusuk");
+        System.out.println("2. Pecel");
+        System.out.println("   21. Ayam       = 13000/porsi");
+        System.out.println("   22. Empal      = 15000/porsi");
+        System.out.println("3. Penyetan");
+        System.out.println("   31. Tahu/Tempe =  5000/porsi");
+        System.out.println("   32. Telur      =  7000/porsi");
+        System.out.println("   33. Ayam       = 10000/porsi");
+        
+        System.out.println("");
+        System.out.println("===============================");
+        System.out.println("");
+        
+        int jumlah, harga;
+        double diskon, total = 0, totalAkhir;
+        Scanner sc = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
+        System.out.print("Pilih Menu = ");
+        int pilih=sc.nextInt();
+        switch(pilih){
+            case 1:
+                System.out.print("Pilih Lauk = ");
+                int pilihLauk1 = input.nextInt();
+                if(pilihLauk1==11){
+                    harga=1500;
+                    System.out.print("Jumlah Tusuk = ");
+                    jumlah=sc.nextInt();
+                    total=harga*jumlah;
+                    System.out.println("Total = "+total);
+                }else if(pilihLauk1==12){
+                    harga=3000;
+                    System.out.print("Jumlah Tusuk = ");
+                    jumlah=sc.nextInt();
+                    total=harga*jumlah;
+                    System.out.println("Total = "+total);
+                }else{
+                    System.out.println("Pilihan Anda Tidak Tersedia");
+                }
+                break;
+            case 2:
+                System.out.print("Pilih Lauk = ");
+                int pilihLauk2 = input.nextInt();
+                if(pilihLauk2==21){
+                    harga=13000;
+                    System.out.print("Jumlah Porsi = ");
+                    jumlah=sc.nextInt();
+                    total=harga*jumlah; 
+                    System.out.println("Total = "+total);
+                }else if(pilihLauk2==22){
+                    harga=15000;
+                    System.out.print("Jumlah Porsi = ");
+                    jumlah=sc.nextInt();
+                    total=harga*jumlah;
+                    System.out.println("Total = "+total);
+                }else{
+                    System.out.println("Pilihan Anda Tidak Tersedia");
+                }
+                break;
+            case 3:
+                System.out.print("Pilih Lauk = ");
+                int pilihLauk3 = input.nextInt();
+                switch(pilihLauk3){
+                    case 31:
+                        harga=5000;
+                        System.out.print("Jumlah Porsi = ");
+                        jumlah=sc.nextInt();
+                        total=harga*jumlah;
+                        System.out.println("Total = "+total);
+                        break;
+                    case 32:
+                        harga=7000;
+                        System.out.print("Jumlah Porsi = ");
+                        jumlah=sc.nextInt();
+                        total=harga*jumlah;
+                        System.out.println("Total = "+total);
+                        break;
+                    case 33:
+                        harga=10000;
+                        System.out.print("Jumlah Porsi = ");
+                        jumlah=sc.nextInt();
+                        total=harga*jumlah;
+                        System.out.println("Total = "+total);
+                        break;
+                    default:
+                        System.out.println("Pilihan Anda Tidak Tersedia");
+                }   
+                break;
+            default:
+                System.out.println("Pilihan Anda Tidak Tersedia");
+        }
+        System.out.println("");
+        System.out.println("===============================");
+        System.out.println("");
+        
+        System.out.print("Memiliki Kartu Member = ");
+        Boolean kartuMember=sc.nextBoolean();
+        if(kartuMember==true){
+            System.out.println("Selamat Anda Mendapat Diskon 5%");
+            diskon=0.05*total;
+            System.out.println("Diskon                = "+diskon);
+            totalAkhir=total-diskon;
+            System.out.println("Total Akhir           = "+totalAkhir);
+        }else{
+            System.out.println("Total Akhir           = "+total);
+        }
+    }
+}
